@@ -1,0 +1,141 @@
+@use "variable";
+
+
+footer{
+   padding-top: 80px;
+   padding-bottom: 80px;
+
+   @include variable.mq(tab){
+      padding-bottom: 60px;
+   }
+
+   @include variable.mq(){
+      padding-top: 60px;
+      padding-bottom: 36px;
+   }
+
+   a{
+      transition: all .4s;
+      &:hover{
+         opacity: .7;
+      }
+   }
+}
+.footer-flex{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 60px;
+   flex-direction: row-reverse;
+
+   @include variable.mq(){
+      display: block;
+      margin-bottom: 66px;
+   }
+}
+
+.footer-nav1{
+   display: flex;
+   gap: 38px 30px;
+   width: 340px;
+   flex-wrap: wrap;
+   margin-bottom: 60px;
+   color: variable.$title-color;
+
+   @include variable.mq(tab){
+      gap: 30px 26px;
+   }
+
+   @include variable.mq(){
+      width: 300px;
+      gap: 24px 20px;
+      justify-content: center;
+      margin: 0 auto 40px;
+      max-width: 100%;
+   }
+}
+
+.footer-nav1-item{
+   a{
+      font-size: 16px;
+      padding: 2px;
+      font-family: variable.$font-en;
+
+      @include variable.mq(){
+         font-size: 14px;
+      }
+   }
+}
+
+.footer-nav2{
+   display: flex;
+   gap: 40px;
+   color: variable.$accent-color;
+
+   @include variable.mq(){
+      gap: 24px;
+      justify-content: center;
+   }
+}
+
+.footer-nav2-item{
+   a{
+      font-size: 11px;
+      padding: 1px;
+   }
+}
+
+.footer-logo{
+   font-size: 28px;
+   font-family: variable.$font-en;
+   color: variable.$title-color;
+   margin-bottom: 38px;
+   letter-spacing: .1em;
+
+   @include variable.mq(tab){
+      font-size: 26px;
+   }
+
+   @include variable.mq(){
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 28px;
+   }
+}
+
+.footer-sns{
+   display: flex;
+   gap: 30px;
+   justify-content: end;
+
+   @include variable.mq(tab){
+      gap: 26px;
+   }
+
+   @include variable.mq(){
+      gap: 22px;
+      justify-content: center;
+      margin-bottom: 70px;
+   }
+
+   li{
+      width: 30px;
+
+      @include variable.mq(tab){
+         width: 28px;
+      }
+      img{
+         object-fit: contain;
+      }
+
+      @include variable.mq(){
+         width: 22px;
+      }
+   }
+}
+
+.footer-copyright{
+   text-align: center;
+   font-size: 10px;
+   color: variable.$accent-color;
+}
+

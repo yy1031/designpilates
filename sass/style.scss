@@ -1,0 +1,199 @@
+@use "variable";
+@use "top";
+@use "news";
+@use "about";
+@use "feature";
+@use "plan";
+@use "voice";
+@use "faq";
+@use "access";
+@use "footer";
+
+// *{
+//    outline: 2px red solid;
+// }
+
+body{
+   font-family: variable.$font-ja;
+   color: #5d5d5d;
+   font-size: 14px;
+   letter-spacing: 0.05em;
+   font-weight: 300;
+
+   @include variable.mq(){
+      font-size: 12px;
+   }
+}
+
+.center{
+   text-align: center;
+}
+.right{
+   text-align: right;
+}
+.is-sp{
+   display: none;
+   @include variable.mq(){
+      display: block;
+   }
+}
+.container{
+   width: 1080px;
+   max-width: 100%;
+   margin: 0 auto;
+   &.container-narrow{
+      width: 800px;
+      @include variable.mq(){
+         width: 100%;
+      }
+   }
+
+   @include variable.mq(tab){
+      width: 100%;
+      padding: 0 70px;
+   }
+
+   @include variable.mq(){
+      width: 100%;
+      padding: 0 20px;
+   }
+}
+
+section{
+   padding-top: 100px;
+   padding-bottom: 100px;
+
+   @include variable.mq(){
+      padding-top: 80px;
+      padding-bottom: 80px;
+   }
+}
+.section-title{
+   margin-bottom: 60px;
+
+   @include variable.mq(){
+      text-align: center;
+   }
+   &.right{
+      @include variable.mq(){
+         text-align: center;
+      }
+   }
+}
+
+.section-title-en{
+   font-family: variable.$font-en;
+   font-size: 28px;
+   color: variable.$title-color;
+   letter-spacing: .08em;
+   margin-bottom: 8px;
+
+   @include variable.mq(tab){
+      font-size: 24px;
+   }
+   @include variable.mq(){
+      font-size: 21px;
+   }
+}
+.section-title-ja{
+   font-size: 16px;
+   color: variable.$accent-color;
+   font-weight: 300;
+
+   @include variable.mq(tab){
+      font-size: 14px;
+   }
+
+   @include variable.mq(){
+      font-size: 13px;
+   }
+}
+.section-btn{
+   font-size: 14px;
+   a{
+      position: relative;
+      padding-right: 26px;
+      font-family: variable.$font-en;
+      &::after{
+         position: absolute;
+         content: ">";
+         font-size: 17px;
+         top: 1px;
+         right: 0;
+      }
+
+      &::before{
+         position: absolute;
+         content: "";
+         width: 102%;
+         height: 1px;
+         background-color: #5d5d5d;
+         left: -1%;
+         bottom: -5px;
+         transition: all .5s;
+         transform: scale(0, 1);
+         transform-origin: left top;
+      }
+
+      &:hover{
+         &::before{
+            transform: scale(1, 1);
+         }
+      }
+   }
+}
+
+
+.insert-imgs{
+   margin-top: 100px;
+   display: flex;
+   height: 340px;
+
+   @include variable.mq(tab){
+      height: 300px;
+   }
+
+   @include variable.mq(){
+      height: 200px;
+   }
+}
+
+.insert-img{
+   width: 50%;
+   img{
+      object-position: top center;
+   }
+
+   @include variable.mq(){
+      width: 100%;
+
+      &:not(:first-child){
+         display: none;
+      }
+   }
+}
+
+
+.reserve-btn{
+   text-align: center;
+   a{
+      display: inline-block;
+      width: 100%;
+      background-color: variable.$key-color;
+      color: #fff;
+      line-height: 80px;
+      font-size: 20px;
+      letter-spacing: .1em;
+      font-weight: 500;
+      transition: all .4s;
+
+      &:hover{
+         opacity: .8;
+      }
+
+      @include variable.mq(){
+         font-size: 14px;
+         line-height: 60px;
+      }
+   }
+}

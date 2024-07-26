@@ -1,0 +1,54 @@
+@use "variable";
+
+
+.about{
+   position: relative;
+
+   &::after{
+      position: absolute;
+      content: "";
+      background: url(../img/circle1.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 400px;
+      height: 560px;
+      top: -100px;
+      left: 0px;
+      max-width: 100%;
+   }
+
+   .container{
+      display: flex;
+      justify-content: space-between;
+
+      @include variable.mq(){
+         display: block;
+      }
+   }
+}
+
+.about-wrap{
+   width: 48%;
+
+   @include variable.mq(){
+      width: 100%;
+      margin-bottom: 60px;
+   }
+}
+.about-content{
+   line-height: 2;
+   @include variable.mq(tab){
+      font-size: 13px;
+   }
+}
+.about-img{
+   width: 46%;
+   aspect-ratio: 10 / 7;
+   top: 100px;
+
+   @include variable.mq(){
+      width: 100%;
+   }
+
+}
+

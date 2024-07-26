@@ -1,0 +1,97 @@
+@use "variable";
+
+
+.access{
+   background-color: variable.$base-color;
+   padding-bottom: 120px;
+}
+
+.access-wrap{
+   height: 380px;
+   display: flex;
+   background-color: #fff;
+   padding: 20px;
+   justify-content: space-between;
+   align-items: center;
+
+   @include variable.mq(){
+      height: auto;
+      display: block;
+      padding: 12px;
+   }
+}
+
+.access-map{
+   width: 45%;
+   height: 100%;
+   iframe{
+      width: 100%;
+      height: 100%;
+   }
+
+   @include variable.mq(){
+      width: 100%;
+      margin-bottom: 20px;
+   }
+}
+
+.access-text{
+   width: 48%;
+
+   @include variable.mq(){
+      width: 100%;
+   }
+}
+
+.access-text-item{
+   display: flex;
+   line-height: 1.5;
+
+   &:not(:first-child){
+      margin-top: 30px;
+
+      @include variable.mq(tab){
+         margin-top: 24px;
+      }
+
+      @include variable.mq(){
+         margin-top: 16px;
+      }
+   }
+
+   &:first-child{
+      dt{
+         padding-top: 3px;
+      }
+      dd{
+         font-size: 18px;
+
+         @include variable.mq(){
+            font-size: 16px;
+         }
+      }
+   }
+
+   dt{
+      font-weight: 500;
+      color: variable.$accent-color;
+      width: 100px;
+   }
+   dd{
+      width: calc(100% - 100px);
+   }
+
+   @include variable.mq(tab){
+      font-size: 13px;
+   }
+
+   @include variable.mq(){
+      dt{
+         width: 80px;
+      }
+
+      dd{
+         width: calc(100% - 80px);
+      }
+   }
+}

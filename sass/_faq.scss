@@ -1,0 +1,136 @@
+@use "variable";
+
+
+.faq{
+   padding-bottom: 120px;
+   .container{
+      display: flex;
+      justify-content: space-between;
+
+      @include variable.mq(){
+         display: block;
+      }
+   }
+   .section-btn{
+      @include variable.mq(){
+         text-align: center;
+      }
+   }
+}
+
+.faq-wrap{
+   width: 760px;
+
+   @include variable.mq(tab){
+      width: 560px;
+      max-width: 79%;
+   }
+
+   @include variable.mq(){
+      width: 100%;
+   }
+}
+
+.faq-list{
+   width: 100%;
+   margin-bottom: 80px;
+}
+
+
+.faq-item-q,.faq-item-a{
+   padding-left: 140px;
+   position: relative;
+   padding-top: 13px;
+   padding-bottom: 13px;
+   line-height: 1.8;
+
+   @include variable.mq(tab){
+      padding-left: 76px;
+   }
+
+   @include variable.mq(){
+      padding-left: 34px;
+      padding-right: 24px;
+   }
+}
+
+.faq-item-q{
+   border-bottom: 1px solid #5d5d5d;
+   &::before{
+      position: absolute;
+      content: "Q.";
+      top: 9px;
+      left: 12px;
+      font-size: 18px;
+      font-family: variable.$font-en;
+      color: variable.$accent-color;
+      @include variable.mq(){
+         font-size: 13px;
+         left: 3px;
+         top: 11px;
+      }
+   }
+}
+
+.faq-item-a{
+   display: none;
+   &::before{
+      position: absolute;
+      content: "A.";
+      top: 9px;
+      left: 12px;
+      font-size: 18px;
+      font-family: variable.$font-en;
+      color: variable.$key-color;
+      @include variable.mq(){
+         font-size: 13px;
+         left: 3px;
+         top: 11px;
+      }
+   }
+}
+
+.faq-item-plus{
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   right: 12px;
+   cursor: pointer;
+   width: 22px;
+   height: 22px;
+
+   @include variable.mq(){
+      width: 16px;
+      height: 16px;
+      right: 3px;
+   }
+
+   &::before{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background-color: variable.$accent-color;
+   }
+
+   &::after{
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: 100%;
+      top: 0;
+      right: 50%;
+      transform: translateX(50%);
+      background-color: variable.$accent-color;
+      transition: all .5s;
+   }
+
+   &.open{
+      &::after{
+         rotate: 90deg;
+      }
+   }
+}

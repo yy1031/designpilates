@@ -1,0 +1,90 @@
+@use "variable";
+
+
+.voice{
+   background-color: variable.$base-color;
+   padding-bottom: 120px;
+   .section-title{
+      margin-bottom: 108px;
+   }
+}
+
+.voice-list{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 80px;
+
+   @include variable.mq(){
+      display: block;
+   }
+}
+
+.voice-item{
+   width: calc((100% - 60px) / 3);
+   padding: 55px 20px 35px;
+   background-color: #fff;
+   position: relative;
+
+   @include variable.mq(tab){
+      width: calc((100% - 40px) / 3);
+      padding: 45px 18px 24px;
+   }
+
+   @include variable.mq(){
+      width: 100%;
+      &+&{
+         margin-top: 56px;
+      }
+   }
+}
+.voice-item-img{
+   position: absolute;
+   width: 84px;
+   top: -50px;
+   left: 50%;
+   transform: translateX(-50%);
+
+   @include variable.mq(tab){
+      width: 70px;
+      top: -40px;
+   }
+   @include variable.mq(){
+      width: 70px;
+      top: -40px;
+   }
+}
+.voice-item-title{
+   font-size: 18px;
+   color: variable.$accent-color;
+   margin-bottom: 7px;
+   line-height: 1.5;
+
+   @include variable.mq(tab){
+      font-size: 16px;
+   }
+   @include variable.mq(){
+      font-size: 16px;
+   }
+}
+
+.voice-item-name{
+   text-align: right;
+   font-size: 12px;
+   margin-bottom: 32px;
+
+   @include variable.mq(tab){
+      font-size: 11px;
+      margin-bottom: 26px;
+   }
+   @include variable.mq(){
+      font-size: 11px;
+      margin-bottom: 26px;
+   }
+}
+.voice-item-disc{
+   line-height: 1.8;
+
+   @include variable.mq(tab){
+      font-size: 12px;
+   }
+}

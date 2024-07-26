@@ -1,0 +1,304 @@
+@use "variable";
+
+
+
+section.top{
+   background: url(../img/pilates-main.png) center 43% / cover;
+   color: #fff;
+   padding-top: 0;
+   padding-bottom: 0;
+
+   .container{
+      padding: 0 50px;
+      width: 100%;
+      @include variable.mq(){
+         padding: 0 20px;
+      }
+   }
+}
+
+header{
+   position: fixed;
+   width: 100vw;
+   top: 0;
+   left: 0;
+   height: 66px;
+   z-index: 100;
+
+   @include variable.mq(){
+      height: 56px;
+   }
+
+   .container{
+      padding: 0 50px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include variable.mq(){
+         padding: 0 20px;
+      }
+   }
+}
+
+.header-logo{
+   font-size: 24px;
+   letter-spacing: .1em;
+   font-family: variable.$font-en;
+   transition: all .5s;
+
+   &.open{
+      color: variable.$key-color;
+   }
+   &.scrolled{
+      color: variable.$key-color;
+   }
+
+   @include variable.mq(){
+      font-size: 18px;
+   }
+}
+
+.header-btn{
+   display: flex;
+   align-items: center;
+
+   &.open{
+      .header-btn-1, .header-btn-2{
+         a{
+            color: variable.$key-color;
+            &::after{
+               background-color: variable.$key-color;
+            }
+         }
+      }
+   }
+
+   &.scrolled{
+      .header-btn-1, .header-btn-2{
+         a{
+            color: variable.$key-color;
+            &::after{
+               background-color: variable.$key-color;
+            }
+         }
+      }
+   }
+}
+
+.header-btn-1{
+   margin-right: 40px;
+   a{
+      transition: all .5s;
+   }
+}
+
+.header-btn-2{
+   margin-right: 60px;
+   a{
+      transition: all .5s;
+   }
+}
+
+.header-btn-1, .header-btn-2{
+   a{
+      position: relative;
+      &::after{
+         position: absolute;
+         content: "";
+         width: 102%;
+         height: 1px;
+         background-color: #fff;
+         left: -1%;
+         bottom: -5px;
+         transition: all .5s;
+         transform: scale(0, 1);
+         transform-origin: left top;
+      }
+
+      &:hover{
+         &::after{
+            transform: scale(1, 1);
+         }
+      }
+   }
+
+   @include variable.mq(){
+      display: none;
+   }
+
+
+}
+.header-nav-bars{
+   width: 30px;
+   height: 22px;
+   position: relative;
+   cursor: pointer;
+
+   &.scrolled{
+      .header-nav-bar1, .header-nav-bar2, .header-nav-bar3{
+         background-color: variable.$key-color;
+      }
+   }
+
+   &.open{
+      .header-nav-bar1{
+         rotate: 45deg;
+         background-color: variable.$key-color;
+         top: 50%;
+      }
+
+      .header-nav-bar3{
+         rotate: -45deg;
+         background-color: variable.$key-color;
+         top: 50%;
+      }
+
+      .header-nav-bar2{
+         display: none;
+      }
+   }
+}
+.header-nav-bar1, .header-nav-bar2, .header-nav-bar3{
+   width: 100%;
+   height: 1px;
+   background-color: #fff;
+   position: absolute;
+   left: 0;
+}
+.header-nav-bar1{
+   top: 0;
+   transition: all .5s;
+}
+
+.header-nav-bar2{
+   top: 10px;
+}
+.header-nav-bar3{
+   top: 21px;
+   transition: all .5s;
+
+}
+
+.main{
+   height: 666px;
+   text-align: center;
+   padding-top: 313px;
+
+   @include variable.mq(){
+      height: 520px;
+      padding-top: 222px;
+   }
+}
+
+.main-title{
+   font-size: 32px;
+
+   @include variable.mq(tab){
+      font-size: 28px;
+   }
+   @include variable.mq(){
+      font-size: 22px;
+   }
+}
+
+
+
+
+
+.header-nav-wrap{
+   position: fixed;
+   width: 100%;
+   top: 0;
+   left: 0;
+   background-color: #fff;
+   padding-top: 66px;
+   padding: 126px 140px 60px;
+   z-index: 50;
+   transform: translateY(-110%);
+   transition: all .5s;
+
+   &.open{
+      transform: translateY(0);
+   }
+
+   a{
+      transition: all .4s;
+      &:hover{
+         opacity: .7;
+      }
+   }
+
+   @include variable.mq(){
+      padding: 86px 20px 48px;
+   }
+}
+
+.header-nav{
+   display: flex;
+   justify-content: center;
+   gap: 40px 80px;
+   flex-wrap: wrap;
+   width: 550px;
+   margin: 0 auto 60px;
+
+   @include variable.mq(){
+      width: 100%;
+      display: block;
+      margin: 0 auto 40px;
+   }
+}
+
+.header-nav-item{
+   text-align: center;
+   a{
+      font-size: 18px;
+      font-family: variable.$font-en;
+      color: variable.$title-color;
+      line-height: 1.1;
+
+      span{
+         font-size: 12px;
+         font-family: variable.$font-ja;
+         color: variable.$accent-color;
+      }
+   }
+   @include variable.mq(){
+      & + & {
+         margin-top: 26px;
+      }
+
+      a{
+         font-size: 14px;
+         span{
+            font-size: 10px;
+         }
+      }
+   }
+}
+
+
+.header-nav-sns{
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+   li{
+      width: 30px;
+      height: 30px;
+      a{
+         img{
+            object-fit: contain;
+         }
+      }
+   }
+
+   @include variable.mq(){
+      gap: 22px;
+
+      li{
+         width: 22px;
+         height: 22px;
+      }
+   }
+}

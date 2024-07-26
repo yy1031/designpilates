@@ -1,0 +1,130 @@
+@use "variable";
+
+.plan{
+   position: relative;
+
+   &::after{
+      position: absolute;
+      content: "";
+      background: url(../img/circle3.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 360px;
+      height: 524px;
+      top: -300px;
+      left: 0px;
+
+      @include variable.mq(tab){
+         width: 270px;
+         height: 464px;
+         top: -270px;
+      }
+
+      @include variable.mq(){
+         display: none;
+      }
+   }
+}
+
+.plan-disc{
+   line-height: 1.8;
+   margin-bottom: 24px;
+}
+
+.plan-table{
+   margin-bottom: 80px;
+
+   @include variable.mq(){
+      display: none;
+   }
+
+   th{
+      height: 72px;
+      font-size: 22px;
+      background-color: variable.$accent-color2;
+      color: #fff;
+      font-weight: 500;
+      line-height: 72px;
+      text-align: center;
+
+      @include variable.mq(tab){
+         font-size: 19px;
+      }
+   }
+
+   td{
+      padding: 38px 12px 48px;
+      background-color: variable.$base-color;
+      text-align: center;
+   }
+}
+
+.plan-table-price{
+   display: inline-block;
+   text-align: right;
+   margin-bottom: 32px;
+}
+
+.plan-table-price-big{
+   font-size: 38px;
+   color: variable.$title-color;
+   font-family: variable.$font-en;
+
+   @include variable.mq(tab){
+      font-size: 32px;
+   }
+}
+
+.plan-table-price-small{
+   font-size: 14px;
+
+   @include variable.mq(tab){
+      font-size: 12px;
+   }
+}
+
+.plan-table-disc{
+   line-height: 1.8;
+
+   @include variable.mq(tab){
+      font-size: 12px;
+   }
+}
+
+
+.plan-table-sp{
+   display: none;
+   @include variable.mq(){
+      display: block;
+      margin-bottom: 60px;
+   }
+
+   th{
+      font-size: 16px;
+      background-color: variable.$accent-color2;
+      color: #fff;
+      font-weight: 500;
+      text-align: center;
+      width: 30%;
+      line-height: 1.5;
+      padding-top: 30px;
+   }
+
+   td{
+      padding: 26px 10px 20px;
+      background-color: variable.$base-color;
+      text-align: center;
+      width: 70%;
+   }
+
+   .plan-table-price{
+      margin-bottom: 24px;
+   }
+   .plan-table-price-big{
+      font-size: 24px;
+   }
+
+   .plan-table-price-small{
+      font-size: 10px;
+   }
+}
