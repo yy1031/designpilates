@@ -35,6 +35,9 @@
 
    .section-title{
       margin-bottom: 100px;
+      @include variable.mq(){
+         margin-bottom: 60px;
+      }
    }
 }
 
@@ -107,6 +110,7 @@
       p{
          display: block;
          line-height: 1.5;
+         padding-bottom: 8px;
          span{
             font-size: 23px;
          }

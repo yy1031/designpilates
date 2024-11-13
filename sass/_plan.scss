@@ -29,6 +29,10 @@
 .plan-disc{
    line-height: 1.8;
    margin-bottom: 24px;
+   @include variable.mq(){
+      line-height: 1.5;
+      text-align: center;
+   }
 }
 
 .plan-table{
@@ -94,6 +98,9 @@
 
 .plan-table-sp{
    display: none;
+   width: 312px;
+   margin: auto;
+   max-width: 100%;
    @include variable.mq(){
       display: block;
       margin-bottom: 60px;
@@ -105,16 +112,16 @@
       color: #fff;
       font-weight: 500;
       text-align: center;
-      width: 30%;
+      width: 28%;
       line-height: 1.5;
-      padding-top: 30px;
+      vertical-align:middle;
    }
 
    td{
       padding: 26px 10px 20px;
       background-color: variable.$base-color;
       text-align: center;
-      width: 70%;
+      width: 72%;
    }
 
    .plan-table-price{
@@ -126,5 +133,8 @@
 
    .plan-table-price-small{
       font-size: 10px;
+   }
+   .plan-table-disc{
+      line-height: 1.5;
    }
 }

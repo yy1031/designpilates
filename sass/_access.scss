@@ -38,6 +38,10 @@
 .access-text{
    width: 48%;
 
+   @include variable.mq(tab){
+      width: 50%;
+   }
+
    @include variable.mq(){
       width: 100%;
    }
@@ -83,6 +87,9 @@
 
    @include variable.mq(tab){
       font-size: 13px;
+      dt{
+         width: 92px;
+      }
    }
 
    @include variable.mq(){

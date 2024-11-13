@@ -182,7 +182,7 @@ header{
 }
 
 .main{
-   height: 666px;
+   height: 676px;
    text-align: center;
    padding-top: 313px;
 
@@ -214,7 +214,7 @@ header{
    left: 0;
    background-color: #fff;
    padding-top: 66px;
-   padding: 126px 140px 60px;
+   padding: 126px 0 60px;
    z-index: 50;
    transform: translateY(-110%);
    transition: all .5s;
@@ -229,6 +229,8 @@ header{
          opacity: .7;
       }
    }
+
+
 
    @include variable.mq(){
       padding: 86px 20px 48px;
@@ -258,10 +260,18 @@ header{
       color: variable.$title-color;
       line-height: 1.1;
 
+      @include variable.mq(tab){
+         font-size: 17px;
+      }
+
       span{
          font-size: 12px;
          font-family: variable.$font-ja;
          color: variable.$accent-color;
+
+         @include variable.mq(tab){
+            font-size: 11px;
+         }
       }
    }
    @include variable.mq(){
